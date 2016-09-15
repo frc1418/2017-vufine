@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Mini Dashboard</title>
+    <link rel="stylesheet" href="css/vufine.css">
+</head>
+
+<body>
+    <!-- You'll need to mess around with the CSS of #camera (found in css/style.css) to get it to work.
+        More explanation in that CSS rule. -->
+    <!-- Gyroscope -->
+    <div id="mask"></div>
+    <svg id="gyro">
+        <circle cx="85" cy="85" r="83" />
+        <circle cx="85" cy="85" r="50" />
+        <rect id="gyro-arm" x="80" y="5" width="10" height="80" />
+        <text id="gyro-number" x="90" y="115">0º</text>
+    </svg>
+    <script src="/networktables/networktables.js"></script>
+    <script src="vufine.js"></script>
+</body>
+
+</html>

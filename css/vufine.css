@@ -48,3 +48,11 @@ text {
     font-size: 25px;
     text-anchor: middle;
 }
+#timer {
+    font-family: monospace;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    font-size: 120px;
+    line-height: .8;
+}

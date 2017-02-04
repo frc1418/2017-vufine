@@ -8,6 +8,10 @@ var ui = {
 		arm: document.getElementById('gyro-arm'),
 		number: document.getElementById('gyro-number')
 	},
+	picker: {
+		state: document.getElementById('picker-state'),
+		arm: document.getElementById('picker-arm')
+	},
     mask: document.getElementById('mask'),
     timer: document.getElementById('timer')
 };
@@ -84,6 +88,9 @@ function onValueChanged(key, value, isNew) {
 				s = 135;
 			}
 			NetworkTables.setValue(key, false);
+			break;
+		case '/SmartDashboard/picker_state':
+			ui.picker.arm.style.transform = 'rotate(' + (value ? 0 : -80) + 'deg)';
 			break;
 	}
 }

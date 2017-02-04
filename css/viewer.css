@@ -10,7 +10,7 @@ body {
     padding: 0;
     overflow: hidden;
     background-size: cover;
-    background-image: url('http://10.14.18.2:5800/?action=stream');
+    background-image: url('http://10.14.18.16:8080/?action=stream');
     image-rendering: optimizeSpeed;
     image-rendering: -webkit-optimize-contrast;
     image-rendering: pixelated;
@@ -31,6 +31,7 @@ text {
     top: 0;
     left: 0;
     opacity: .2;
+    z-index: -10;
 }
 #gyro {
     position: absolute;
@@ -55,4 +56,9 @@ text {
     bottom: 0;
     font-size: 120px;
     line-height: .8;
+}
+#picker-arm {
+    transform: rotate(-80deg);
+    transition: .5s;
+    transform-origin: left;
 }

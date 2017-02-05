@@ -8,6 +8,7 @@ body {
     overflow: hidden;
     background-color: #222;
     padding: 0;
+    margin: 0;
     overflow: hidden;
     background-size: cover;
     background-image: url('http://10.14.18.16:8080/?action=stream');
@@ -15,6 +16,11 @@ body {
     image-rendering: -webkit-optimize-contrast;
     image-rendering: pixelated;
     image-rendering: optimize-contrast;
+}
+body > *:not(#mask) {
+    background: rgba(0, 0, 0,.2);
+    padding: 10px;
+    transform: scale(1.5)
 }
 svg *:not(text) {
     fill: transparent;
@@ -35,15 +41,17 @@ text {
 }
 #gyro {
     position: absolute;
-    bottom: 10px;
-    left: 10px;
+    bottom: 0;
+    left: 0;
     width: 180px;
     height: 170px;
+    transform-origin: bottom left;
 }
 #gyro-arm {
     -webkit-transform-origin: bottom;
     -ms-transform-origin: bottom;
     transform-origin: bottom;
+    fill: white;
 }
 #gyro-number {
     font-size: 25px;
@@ -54,8 +62,13 @@ text {
     position: absolute;
     right: 0;
     bottom: 0;
-    font-size: 120px;
-    line-height: .8;
+    font-size: 220px;
+    line-height: .7;
+    transform-origin: bottom right;
+}
+#picker-state {
+    height: 200px;
+    transform-origin: top left;
 }
 #picker-arm {
     transform: rotate(-80deg);

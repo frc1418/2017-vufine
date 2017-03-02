@@ -9,13 +9,20 @@ body {
     background-color: #222;
     padding: 0;
     margin: 0;
+}
+
+#camera {
+    padding: 0;
+    position: fixed;
+    bottom: 0;
+    left: 35vw;
+    width: 50vw;
+    height: 80vh;
     overflow: hidden;
+    background-color: #333;
+    background-image: url('http://10.14.18.2:1181/?action=stream');
     background-size: cover;
-    background-image: url('http://10.14.18.62:8081/?action=stream');
-    image-rendering: optimizeSpeed;
-    image-rendering: -webkit-optimize-contrast;
-    image-rendering: pixelated;
-    image-rendering: optimize-contrast;
+    background-repeat: no-repeat;
 }
 body > *:not(#mask) {
     background: rgba(0, 0, 0,.2);

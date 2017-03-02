@@ -13,13 +13,22 @@ var ui = {
 		arm: document.getElementById('picker-arm')
 	},
     mask: document.getElementById('mask'),
-    timer: document.getElementById('timer')
+    timer: document.getElementById('timer'),
+    camera: {
+		viewer: document.getElementById('camera'),
+		id: 0,
+		srcs: [ // Will default to first camera
+            'http://10.14.18.2:1181/?action=stream',
+            'http://10.14.18.2:1182/?action=stream'
+        ]
+    }
 };
 
 // Sets function to be called when any NetworkTables key/value changes
 NetworkTables.addGlobalListener(onValueChanged, true);
 
 function onValueChanged(key, value, isNew) {
+	console.log(key + ' is ' + value);
 	// Sometimes, NetworkTables will pass booleans as strings. This corrects for that.
 	if (value == 'true') {
 		value = true;
@@ -91,6 +100,11 @@ function onValueChanged(key, value, isNew) {
 			break;
 		case '/SmartDashboard/picker_state':
 			ui.picker.arm.style.transform = 'rotate(' + (value ? 0 : -80) + 'deg)';
+			break;
+		case '/SmartDashboard/camera_id':
+			ui.camera.id = value;
+			ui.camera.viewer.style.backgroundImage = 'url(' + ui.camera.srcs[ui.camera.id] + ')';
+			console.log('Camera stream source switched to ' + ui.camera.viewer.style.backgroundImage);
 			break;
 	}
 }

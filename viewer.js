@@ -101,7 +101,7 @@ function onValueChanged(key, value, isNew) {
 		case '/SmartDashboard/picker_state':
 			ui.picker.arm.style.transform = 'rotate(' + (value ? 0 : -80) + 'deg)';
 			break;
-		case '/SmartDashboard/camera':
+		case '/SmartDashboard/camera_id':
 			ui.camera.id = value;
 			ui.camera.viewer.style.backgroundImage = 'url(' + ui.camera.srcs[ui.camera.id] + ')';
 			console.log('Camera stream source switched to ' + ui.camera.viewer.style.backgroundImage);
